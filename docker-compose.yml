@@ -31,7 +31,7 @@ services:
       - .:/usr/local/apache2/htdocs/
     ports:
       - "99:80"
-  demons:
+  demo:
     build:
       context: .
       dockerfile: Dockerfile-web
