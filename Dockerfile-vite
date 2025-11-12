@@ -1,4 +1,0 @@
-FROM node:24
-
-RUN npm install
-Run npm run build
