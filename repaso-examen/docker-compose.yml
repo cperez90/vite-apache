@@ -1,0 +1,23 @@
+services:
+  vite:
+    build:
+      context: .
+      dockerfile: ./vite/Dockerfile
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    volumes:
+      - ./vite/prueba:/app
+    ports:
+      - "69:5173"
+    command: ["sh", "-c", "npm run build && npm run dev"]
+  apache:
+    build:
+      context: .
+      dockerfile: ./apache/Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./vite/prueba/dist:/var/www/vite
+    ports:
+      - "8084:80"

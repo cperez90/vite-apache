@@ -17,4 +17,4 @@ RUN npm install && npm run build
 RUN mkdir -p /build/app2
 
 EXPOSE 5173
-CMD ["sh", "-c", "npm run build && cp -f bundle.js /build/app2/bundle.js"]
+CMD ["sh", "-c", "npm run build && cp -f bundle.js /build/app2/bundle.js && cp -f index.html /build/app2/index.html && tail -f /dev/null"]

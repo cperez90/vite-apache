@@ -10,7 +10,7 @@ services:
     volumes:
       - ./app1:/app
     ports:
-      - "8082:5173"
+      - "8282:5173"
     command: ["sh", "-c", "npm run build && npm run dev"]
   app2:
     build:
